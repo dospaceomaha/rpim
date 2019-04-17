@@ -20,7 +20,7 @@ if [ "$?" -eq 0 ]; then
                 if [ ! -f /media/temp1/wi ]; then
                         printf "bypass\n"
                         stime=$(date +%s)
-                        dd bs=4M if=/home/cit-admin/pibackup2.img of=/dev/disk/by-id/usb-TS-RDF5_SD_Transcend_000000000039-0:0 status=progress conv=fsync
+                        dd bs=4M if=/home/cit-admin/rpimg/pibackup2.img of=/dev/disk/by-id/usb-TS-RDF5_SD_Transcend_000000000039-0:0 status=progress conv=fsync
                         passd=$?
                         dtime=$(date +%s)
                         fintime=$((dtime-stime))
@@ -41,7 +41,7 @@ if [ "$?" -eq 0 ]; then
                 0)
                         printf "case 0\n"
                         stime=$(date +%s)
-                        dd bs=4M if=/home/cit-admin/"$fname" of=/dev/disk/by-id/usb-TS-RDF5_SD_Transcend_000000000039-0:0 status=progress conv=fsync
+                        dd bs=4M if=/home/cit-admin/rpimg/"$fname" of=/dev/disk/by-id/usb-TS-RDF5_SD_Transcend_000000000039-0:0 status=progress conv=fsync
                         passd=$?
                         dtime=$(date +%s)
                         fintime=$((dtime-stime))
@@ -59,7 +59,7 @@ if [ "$?" -eq 0 ]; then
                 1)
                         printf "case 1\n"
                         stime=$(date +%s)
-                        dd bs=4M of=/home/cit-admin/"$fname" if=/dev/disk/by-id/usb-TS-RDF5_SD_Transcend_000000000039-0:0 status=progress conv=fsync
+                        dd bs=4M of=/home/cit-admin/rpimg/"$fname" if=/dev/disk/by-id/usb-TS-RDF5_SD_Transcend_000000000039-0:0 status=progress conv=fsync
                         passd=$?
                         dtime=$(date +%s)
                         fintime=$((dtime-stime))
